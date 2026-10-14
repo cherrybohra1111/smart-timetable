@@ -1,19 +1,23 @@
-import { CalendarDays } from 'lucide-react'
+import Header from './components/Header';
+import { useState } from 'react';
 
 function App() {
+  const [selectedBatchId, setSelectedBatchId] = useState('btech-5-cse');
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-950">
-      <div className="rounded-2xl bg-white p-8 text-center shadow-xl">
-        <CalendarDays className="mx-auto mb-4 h-10 w-10 text-indigo-600" />
-        <h1 className="text-3xl font-bold text-indigo-600">
-          Smart CSE Timetable
-        </h1>
-        <p className="mt-3 text-slate-600">
-          Tailwind CSS is working!
-        </p>
-      </div>
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <Header
+        selectedBatchId={selectedBatchId}
+        setSelectedBatchId={setSelectedBatchId}
+      />
+
+      <main className="mx-auto max-w-7xl px-6 py-8">
+        <div className="mb-8">
+          <p>Dashboard coming soon...</p>
+        </div>
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
